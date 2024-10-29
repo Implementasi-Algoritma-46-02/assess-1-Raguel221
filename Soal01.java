@@ -10,3 +10,29 @@ public class Soal01 {
         String id3 = scanner.next();
         String id4 = scanner.next();
         String id5 = scanner.next();
+        
+        System.out.println(id1 + " " + (isValidID(id1) ? "valid" : "tidak valid"));
+        System.out.println(id2 + " " + (isValidID(id2) ? "valid" : "tidak valid"));
+        System.out.println(id3 + " " + (isValidID(id3) ? "valid" : "tidak valid"));
+        System.out.println(id4 + " " + (isValidID(id4) ? "valid" : "tidak valid"));
+        System.out.println(id5 + " " + (isValidID(id5) ? "valid" : "tidak valid"));
+
+        scanner.close();
+	}
+
+	public static boolean isValidID(String id) {
+        if (id.length() != 3 || !id.matches("\\d+")) {
+            return false;
+        }
+
+        int digit1 = Character.getNumericValue(id.charAt(0));
+        int digit2 = Character.getNumericValue(id.charAt(1));
+        int digit3 = Character.getNumericValue(id.charAt(2));
+
+        if (digit1 <= digit2 && digit2 <= digit3 && digit3 % 2 != 0) {
+            return digit1 != digit2 && digit2 != digit3 && digit1 != digit3;
+        }
+        return false;
+    }
+
+}
