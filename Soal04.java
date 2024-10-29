@@ -1,8 +1,8 @@
-
-import java.util.Scanner;
+ import java.util.Scanner;
 
 public class Soal04 {
 
+}
 	public static void main(final String[] args) {
 		Scanner scanner = new Scanner(System.in);
         final double HONOR_PER_JAM = 30000;
@@ -37,7 +37,7 @@ public class Soal04 {
         }
         double totalHonor = honorDasar + bonus;
         System.out.printf("%.1f%n", totalHonor);
-
+}	
         scanner.close();
+
 	}
-}
